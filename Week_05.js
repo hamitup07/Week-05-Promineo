@@ -164,7 +164,14 @@ class Menu {
         }
         
         deleteClass() {
-            let index = prompt(`Enter the index of the class you wish to delete: `)
+            let classesString = "List of Classes: \n";
+            for (let i = 0; i < this.classes.length; i++) {
+            classesString += i + ") " + this.classes[i].name + "\n";
+            } 
+
+            let index = prompt(`
+            ${classesString}
+            Enter the index of the class you wish to delete: `)
             if (index > -1 && index < this.classes.length) {
                 this.classes.splice(index, 1);
             }
